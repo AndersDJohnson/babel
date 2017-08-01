@@ -124,7 +124,10 @@ const buildTest = function(binName, testName, opts) {
     let args = [binLoc];
 
     args.push("--presets", presetLocs, "--plugins", pluginLocs);
-    args.push("--only", "../../../../packages/*/test");
+
+    if (args.indexOf("--only") === -1) {
+      args.push("--only", "../../../../packages/*/test");
+    }
 
     args = args.concat(opts.args);
 

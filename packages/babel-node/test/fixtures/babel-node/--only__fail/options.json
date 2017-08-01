@@ -1,0 +1,5 @@
+{
+  "args": ["index", "--only", "/.*some-non-matching-regex.*/"],
+  "stderr": "SyntaxError: Unexpected token import",
+  "stderrContains": true
+}

@@ -1,0 +1,5 @@
+{
+  "args": ["index", "--only", "/\\.\\.\\/\\.\\.\\/\\.\\.\\/\\.\\.\\/packages\\/[^\\/]*\\/test\\/.*\\/index.js$/"],
+  "stderr": "SyntaxError: Unexpected token import",
+  "stderrContains": true
+}

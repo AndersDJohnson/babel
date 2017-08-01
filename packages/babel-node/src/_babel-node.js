@@ -12,9 +12,16 @@ import pkg from "../package.json";
 
 const program = new commander.Command("babel-node");
 
+const regex = /^\/(.*)\/$/;
+
 function collect(value, previousValue): Array<string> {
   // If the user passed the option with no value, like "babel-node file.js --presets", do nothing.
   if (typeof value !== "string") return previousValue;
+
+  const match = value && value.match(regex);
+  if (match) {
+    return [new RegExp(match[1])];
+  }
 
   const values = value.split(",");
 
